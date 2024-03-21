@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import StackNavigator from '../navigation/stack-navigator';
+import HelloStackNavigator from '../navigation/hello-stack-navigator';
 
 export default function Hello() {
-	return <StackNavigator />;
+	return <HelloStackNavigator />;
 }

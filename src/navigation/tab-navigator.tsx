@@ -1,11 +1,19 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AtSignIcon, RadioIcon, SunIcon } from '@gluestack-ui/themed';
+import {
+	AtSignIcon,
+	RadioIcon,
+	RemoveIcon,
+	SettingsIcon,
+	SunIcon,
+} from '@gluestack-ui/themed';
 import Hello from '../tabs/hello';
 import World from '../tabs/world';
+import Settings from '../tabs/settings';
 
 export type TabList = {
 	Hello: undefined;
 	World: undefined;
+	Settings: undefined;
 };
 
 const Tab = createBottomTabNavigator<TabList>();
@@ -22,6 +30,10 @@ export default function TabNavigator() {
 							return <AtSignIcon color={focused ? 'teal' : 'gray'} />;
 						case 'World':
 							return <SunIcon color={focused ? 'teal' : 'gray'} />;
+						case 'Settings':
+							return <SettingsIcon color={focused ? 'teal' : 'gray'} />;
+						default:
+							return <RemoveIcon />;
 					}
 				},
 				tabBarActiveTintColor: 'teal',
@@ -29,6 +41,7 @@ export default function TabNavigator() {
 			})}>
 			<Tab.Screen name='Hello' component={Hello} />
 			<Tab.Screen name='World' component={World} />
+			<Tab.Screen name='Settings' component={Settings} />
 		</Tab.Navigator>
 	);
 }

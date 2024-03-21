@@ -1,7 +1,7 @@
 import { Text as TextRN } from 'react-native';
 import React, { useState } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { StackParamList } from '../navigation/stack-navigator';
+import { StackParamList } from '../../navigation/hello-stack-navigator';
 import { Box, Button, ButtonText } from '@gluestack-ui/themed';
 import { MotiText } from 'moti';
 
@@ -18,7 +18,7 @@ export default function HomeScreen({ navigation }: HomeProps) {
 				className='text-3xl text-slate-700'
 				from={{ scale: 0.1, opacity: 0 }}
 				animate={{ scale: 1, opacity: 1 }}
-				transition={{ type: 'spring' }}>
+				transition={{ type: 'timing', delay: 2000 }}>
 				Kian's Starter
 			</MotiText>
 			<Box w={'$1/2'} my={'$6'} h={'$1/3'}>
